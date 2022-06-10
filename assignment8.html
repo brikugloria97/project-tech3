@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 8</title>
+</head>
+<link rel="stylesheet" href="./css/style.css">
+<body>
+  <p>Our menu</p>
+  <p id="menuItems"></p>
+<select name="menuField" id="menuField" class="menuField">
+<option value="1">Banku and okro soup</option>
+<option value="2">spagetti jollof</option>
+<option value="3">fufu and light soup</option>
+<option value="4">rice and stew</option>
+</select>
+<input type="submit" value="submit" class="menuSumbit">
+<p id="userSelection"></p>
+<p id="ingredients"></p>
+  
+<script>
+   let item1 = "Banku and okro soup";
+  let item2 = "spagetti jollof";
+   let item3 = "fufu and light soup";
+   let item4 = "rice and stew";
+
+
+let ingredient1 = "corn dough,okro,plam oil,cassava dough, fish, chicken, tomatoes,pepper,onion,garlic";
+let ingredient2 = "spagetti,onion,tomatoes,pepper,sardines";
+let ingredient3 = "cassava, plaintain,chicken,tomatoes";
+let ingredient4 = "rice,pepper,tomatoes,pepper,onion,fish";
+  
+document.getElementById("menuItems").innerHTML= "1."+item1+" 2."+item2+" 3."+item3+" 4."+item4;
+
+const menuSumbit = document.querySelector(".menuSumbit");
+const menuField = document.querySelector(".menuField");
+
+function checkMenu() {
+  const menuValue = Number(menuField.value)
+
+  if (menuValue== 1) {
+    document.getElementById("userSelection").innerHTML = "You have selected " + item1;
+    document.getElementById("ingredients").innerHTML ="The ingredients are: "+ ingredient1;
+  }
+
+else if(menuValue==2) {
+  document.getElementById("userSelection").innerHTML = "You have selected " + item2;
+  document.getElementById("ingredients").innerHTML ="The ingredients are: "+ ingredient2;
+}
+
+else if(menuValue==3) {
+  document.getElementById("userSelection").innerHTML = "You have selected " + item3;
+  document.getElementById("ingredients").innerHTML ="The ingredients are: "+ ingredient3;
+}
+
+else if(menuValue==4) {
+  document.getElementById("userSelection").innerHTML = "You have selected " + item4;
+  document.getElementById("ingredients").innerHTML ="The ingredients are: "+ ingredient4;
+}
+
+else{
+  document.write("You have not selected any food");
+}
+}
+
+    menuSumbit.addEventListener("click",checkMenu);
+
+
+  
+</script>
+
+</body>
+</html>
